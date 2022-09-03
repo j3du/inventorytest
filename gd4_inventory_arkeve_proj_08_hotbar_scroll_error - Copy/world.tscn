@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://q2rpufwrlbpf"]
+
+[ext_resource type="Script" path="res://world.gd" id="1_c25it"]
+[ext_resource type="PackedScene" uid="uid://dvaaalghkyo7u" path="res://static_body_3d.tscn" id="2_2e1bf"]
+[ext_resource type="PackedScene" uid="uid://bvhnyx5tqstul" path="res://inventory/inventory.tscn" id="3_8v36e"]
+[ext_resource type="PackedScene" uid="uid://dmvbswudv0u8j" path="res://character_body_3d.tscn" id="3_d62ce"]
+[ext_resource type="PackedScene" uid="uid://bkqosaghbs8t8" path="res://orb.tscn" id="5_1tw2a"]
+[ext_resource type="PackedScene" uid="uid://c74sduh5am75v" path="res://Hotbar.tscn" id="6_03xpy"]
+
+[node name="World" type="Node3D"]
+script = ExtResource("1_c25it")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 20, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.978867, -0.204496, 0, 0.204496, 0.978867, 0, 2, 10)
+
+[node name="StaticBody3D" parent="." instance=ExtResource("2_2e1bf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+collision_layer = 2
+collision_mask = 7
+
+[node name="Inventory" parent="." instance=ExtResource("3_8v36e")]
+visible = false
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("3_d62ce")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.133459, 1, 0)
+collision_mask = 2
+
+[node name="Orb" parent="." instance=ExtResource("5_1tw2a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1024, 4.39469, 0)
+collision_layer = 4
+collision_mask = 2
+
+[node name="Hotbar" parent="." instance=ExtResource("6_03xpy")]

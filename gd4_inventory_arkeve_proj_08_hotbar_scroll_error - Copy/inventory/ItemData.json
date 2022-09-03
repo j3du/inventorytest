@@ -1,0 +1,35 @@
+{
+  "Axe": {
+	"ItemCategory": "Resource",
+	"StackSize": 99,
+	"Description": "A sturdy tree branch that can be used for crafting."
+  },
+  "Common Sword": {
+	"ItemCategory": "Consumable",
+	"AddHealth": 5,
+	"AddEnergy": 32,
+	"StackSize": 99,
+	"Description": "It smells like medicine."
+  },
+  "Mana Potion": {
+	"ItemCategory": "Sword",
+	"ItemAttack": 3,
+	"ItemSpeed": 0.75, 
+	"StackSize": 2,
+	"Description": "Quite a rusty sword."
+  },
+  "Shield": {
+	"ItemCategory": "Consumable",
+	"AddHealth": 5,
+	"AddEnergy": 32,
+	"StackSize": 99,
+	"Description": "It smells like medicine."
+  },
+  "Steel Helmet": {
+	"ItemCategory": "Sword",
+	"ItemAttack": 3,
+	"ItemSpeed": 0.75, 
+	"StackSize": 2,
+	"Description": "Quite a rusty sword."
+  }
+}

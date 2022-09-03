@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://dmvbswudv0u8j"]
+
+[ext_resource type="Script" path="res://_CharacterBody3D.gd" id="1_ig5ol"]
+[ext_resource type="Script" path="res://pickupzone.gd" id="2_qky5l"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ssgl6"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yl7i5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b8hlq"]
+size = Vector3(8, 1, 2)
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+script = ExtResource("1_ig5ol")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_ssgl6")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_yl7i5")
+
+[node name="PickupZone" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("2_qky5l")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PickupZone"]
+shape = SubResource("BoxShape3D_b8hlq")
+
+[connection signal="body_entered" from="PickupZone" to="PickupZone" method="_on_pickup_zone_body_entered"]
+[connection signal="body_exited" from="PickupZone" to="PickupZone" method="_on_pickup_zone_body_exited"]

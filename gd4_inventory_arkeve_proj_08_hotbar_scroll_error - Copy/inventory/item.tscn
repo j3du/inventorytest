@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgpkddj8g5a6m"]
+
+[ext_resource type="Script" path="res://inventory/item.gd" id="1_bfcjf"]
+[ext_resource type="Texture2D" uid="uid://ee5l0v8rl13b" path="res://icons/Axe.png" id="2_ah6xd"]
+
+[node name="Item" type="Node2D"]
+z_index = 1
+script = ExtResource("1_bfcjf")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(64, 64)
+offset_right = 64.0
+offset_bottom = 64.0
+mouse_filter = 2
+texture = ExtResource("2_ah6xd")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 38.0
+offset_top = 40.0
+offset_right = 57.0
+offset_bottom = 66.0
+text = "00"
